@@ -26,3 +26,24 @@ document.querySelectorAll('.menu a').forEach((link) => {
         }
     });
 });
+
+// Função para alternar o menu hambúrguer
+document.querySelector('.hamburger').addEventListener('click', function () {
+    const menu = document.querySelector('.menu');
+    menu.classList.toggle('active'); // Alterna a visibilidade do menu
+});
+
+// Animação suave ao clicar nos links do menu
+document.querySelectorAll('.menu a').forEach((link) => {
+    link.addEventListener('click', (event) => {
+        event.preventDefault();
+        const targetId = link.getAttribute('href').slice(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({behavior: 'smooth'});
+            // Fechar o menu ao clicar em um item (opcional)
+            const menu = document.querySelector('.menu');
+            menu.classList.remove('active');
+        }
+    });
+});
