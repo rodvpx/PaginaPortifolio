@@ -6,19 +6,37 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    font-family: helvetica;
+    background-image: url("../img/fundo3.jpg");
     color: #333;
-    line-height: 1.6;
-    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    padding-top: 80px; /* Espaçamento para a navbar fixa */
+    margin: 0;
 }
+
+.navbar h1 {
+    margin-left: 10px;
+    color: white;
+}
+
+.navbar h1 a {
+    text-decoration: none; /* Remove o sublinhado do link */
+    color: inherit; /* Mantém a cor do h1 */
+}
+
 
 /* Header */
 header {
+    width: 100%;
     background-color: #333;
     color: #fff;
-    padding: 10px 20px;
-    position: sticky;
+    padding: 10px 0;
+    position: fixed;
     top: 0;
     z-index: 1000;
 }
@@ -48,62 +66,52 @@ header .menu a:hover {
     text-decoration: underline;
 }
 
-.logo img {
-    height: 50px;
-    margin-right: 10px;
-}
-
-/* Carrossel */
-.carrossel {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    max-height: 400px;
-    background-color: #f4f4f4;
-}
-
-.slides {
+/* Estilos da seção */
+.intro {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    justify-content: space-between; /* Coloca a imagem e o texto nos lados opostos */
+    align-items: center; /* Alinha verticalmente o conteúdo */
+    gap: 20px; /* Espaçamento entre a imagem e o texto */
+    padding: 40px; /* Adiciona um pouco de padding */
 }
 
-.slide {
-    min-width: 100%;
-    transition: opacity 0.5s ease-in-out;
+/* Estilo para a imagem */
+.intro-img {
+    width: 450px; /* Define a largura da imagem (ajuste conforme necessário) */
+    height: 450px; /* Mantém a proporção da imagem */
+    border-radius: 8px; /* Adiciona borda arredondada à imagem */
+    object-fit: cover;
+    object-position: center top;
 }
 
-.slide img {
-    width: 100%;
-    height: auto;
+/* Estilo para o texto */
+.intro-text {
+    max-width: 45%; /* Garante que o texto não ocupe muito espaço */
 }
 
-button.prev, button.next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    font-size: 2rem;
-    padding: 10px;
-    cursor: pointer;
+.intro-text h2 {
+    font-size: 1.6em;
+    color: #333;
+    margin-bottom: 10px;
 }
 
-button.prev {
-    left: 10px;
+.intro-text h3.highlight {
+    font-size: 2em;
+    color: #FF9800; /* Cor amarela para o destaque */
 }
 
-button.next {
-    right: 10px;
-}
 
 /* Card */
 .card {
-    background: #fff;
+    background-color: white;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    margin: 20px 0;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 1000px;
+    text-align: center;
+    background-size: cover;
 }
 
 .card h2 {
@@ -159,6 +167,9 @@ button.next {
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 10px;
+    border: solid;
+    border-radius: 10px;
+    border-color: #e68900;
 }
 
 /* Contato */
@@ -182,6 +193,7 @@ button.next {
 
 /* Footer */
 footer {
+    width: 100%;
     text-align: center;
     background: #333;
     color: #fff;
